@@ -14,6 +14,7 @@ import 'screens/product_detail_screen.dart';
 import 'screens/favorites_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/report_screen.dart';
+import 'screens/scan_result_screen.dart';
 import 'widgets/bottom_nav.dart';
 
 void main() async {
@@ -64,6 +65,7 @@ class HalalApp extends StatelessWidget {
         '/favorites': (_) => const MainNavigator(initialIndex: 3),
         '/profile': (_) => const MainNavigator(initialIndex: 4),
         '/report': (_) => const ReportScreen(),
+        '/scan-result': (_) => const ScanResultScreen(),
       },
     );
   }
