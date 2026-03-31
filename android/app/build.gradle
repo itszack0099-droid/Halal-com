@@ -6,24 +6,16 @@ plugins {
 
 android {
     namespace "com.halalbillionaires.halal_com"
-    compileSdk 34
-    ndkVersion "25.1.8937393"
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.halalbillionaires.halal_com"
-        minSdk 21
-        targetSdk 34
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -33,8 +25,27 @@ android {
             shrinkResources false
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 flutter {
     source "../.."
+}
+
+dependencies {
+
+    // 🔥 REQUIRED — fixes Material theme error
+    implementation "com.google.android.material:material:1.11.0"
+
+    // 🔥 REQUIRED — fixes SplashScreen error
+    implementation "androidx.core:core-splashscreen:1.0.1"
+
 }
